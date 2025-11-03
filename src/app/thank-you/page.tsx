@@ -1,19 +1,12 @@
 import { Header } from "@/components/composed/header";
 import Image from "next/image";
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
+export default function Page() {
   return (
     <>
       <Header />
-
       <div className="flex flex-wrap items-center justify-center pt-60">
-        <div className="rounded-md border p-6 shadow-sm md:w-120 bg-white flex  flex-wrap items-center justify-center ">
+        <div className="rounded-md border p-6 shadow-sm md:w-120 bg-white flex flex-wrap items-center justify-center mx-2 md:mx-0">
           <div>
             <div className="flex flex-wrap items-center justify-center">
               <Image

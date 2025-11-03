@@ -5,13 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
 
-export default function Page({
-  params,
-  searchParams,
-}: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-}) {
+export default function Page() {
   async function saveContact(formData: FormData) {
     "use server";
 
@@ -23,28 +17,30 @@ export default function Page({
       additionalInfo: formData.get("additionalInfo"),
     };
 
-    const sentRequest = await fetch(`${process.env.BACKEND_URL}/contact`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
+    const sentRequest = await fetch(
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}/contact`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        cache: "no-cache",
+      },
+    );
 
     if (!sentRequest.ok) {
-      console.log(await sentRequest.json())
-      throw new Error(`There was an error saving contact: ${JSON.stringify(payload)}.`)
+      throw new Error(
+        `There was an error saving contact: ${JSON.stringify(payload)}.`,
+      );
     }
 
-    redirect('/thank-you')
-
-    // mutate data
-    // revalidate the cache
+    redirect("/thank-you");
   }
 
   return (
     <>
       <Header />
 
-      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-12 md:flex-row md:gap-6 md:py-24 ">
+      <div className="mx-auto flex max-w-5xl flex-col gap-10 px-4 py-12 md:flex-row md:gap-6 md:py-24">
         <div className="rounded-md border p-6 shadow-sm md:w-80 bg-white">
           <p className="mt-2 text-sm text-neutral-700">
             We've been around since 2013, and our vision is to make it easy for

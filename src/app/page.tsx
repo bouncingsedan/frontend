@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import RotatingText from "@/components/reactbits/rotatingText";
+import RotatingText from "@/components/reactBits/rotatingText";
 import Squares from "@/components/Squares";
 
 export default function Home() {
@@ -8,10 +8,9 @@ export default function Home() {
     <>
       <div className="flex items-center justify-center">
         <div
-          className="font-sans grid gap-16 p-8 sm:p-20 place-items-center"
-          style={{ paddingTop: "35vh" }}
+          className="font-sans grid gap-16 p-8 sm:p-20 place-items-center pt-[12vh] md:pt-[32vh]"
         >
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white p-4 rounded-md border p-12">
+          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start bg-white rounded-md border p-12">
             <Image
               src="/openagent.svg"
               alt="OpenAgent logo"

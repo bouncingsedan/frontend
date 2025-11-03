@@ -34,20 +34,6 @@ export function Footer() {
           />
           Manage Contacts
         </Link>
-        <a
-          className="flex items-center gap-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/copyright.svg"
-            alt="Globe icon"
-            width={20}
-            height={20}
-          />
-          2025 OpenAgent
-        </a>
       </footer>
     </>
   );
