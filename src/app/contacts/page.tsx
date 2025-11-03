@@ -25,7 +25,7 @@ export default async function Page() {
     );
   }
 
-  const contacts: Contact[] = (await getAllContacts.json()).rows;
+  const contacts: Contact[] = (await getAllContacts.json());
 
   const hasContacts = contacts.length > 0;
 
