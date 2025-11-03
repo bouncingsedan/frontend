@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import RotatingText from "@/components/reactBits/rotatingText";
-import Squares from "@/components/Squares";
+import RotatingText from "@/components/reactBits/RotatingText";
+import Squares from "@/components/reactBits/Squares";
 
 export default function Home() {
   return (
